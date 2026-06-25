@@ -1,11 +1,11 @@
 from django.contrib import admin
-from .models import Author, Genre, Book, BookInstance, Language, Member
+from .models import Author, Genre, Book, BookInstance, Language, Member, BookIssuance
 
 
 admin.site.register(Genre)
 admin.site.register(Language)
 admin.site.register(Member)
-
+admin.site.register(BookIssuance)
 # Inline classes
 class BooksInline(admin.TabularInline):
     model = Book

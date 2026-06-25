@@ -128,3 +128,13 @@ class Member(models.Model):
 
     def __str__(self):
         return self.name
+
+class BookIssuance(models.Model):
+    """Model representing which member borrowed which book, and when."""
+    book = models.ForeignKey('Book', on_delete=models.CASCADE, null=True)
+    member = models.ForeignKey('Member', on_delete=models.CASCADE, null=True)
+    issue_date = models.DateField(null=True, blank=True)
+    return_date = models.DateField(null=True, blank=True)
+
+    def __str__(self):
+        return f'{self.book} issued to {self.member}'

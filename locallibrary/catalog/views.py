@@ -15,12 +15,13 @@ def index(request):
     request.session['num_visits'] = num_visits
     num_genres = Genre.objects.count()
     num_books_with_word = Book.objects.filter(title__icontains='the').count()
-
+    num_issuances = BookIssuance.objects.count()
     context = {
         'num_books': num_books,
         'num_instances': num_instances,
         'num_instances_available': num_instances_available,
         'num_authors': num_authors,
+        'num_issuances': num_issuances,
         'num_visits': num_visits,
         'num_genres': num_genres,
         'num_books_with_word': num_books_with_word,
