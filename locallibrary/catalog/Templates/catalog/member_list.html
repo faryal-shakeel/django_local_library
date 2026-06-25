@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>All Members</h1>
+
+  {% if member_list %}
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Date of Birth</th>
+        <th>Address</th>
+      </tr>
+      {% for member in member_list %}
+        <tr>
+          <td>{{ member.name }}</td>
+          <td>{{ member.date_of_birth }}</td>
+          <td>{{ member.address }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>There are no members.</p>
+  {% endif %}
+{% endblock %}

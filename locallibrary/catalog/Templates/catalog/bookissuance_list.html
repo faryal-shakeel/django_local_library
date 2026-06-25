@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>All Book Issuances</h1>
+
+  {% if bookissuance_list %}
+    <table>
+      <tr>
+        <th>Book</th>
+        <th>Member</th>
+        <th>Issue Date</th>
+        <th>Return Date</th>
+      </tr>
+      {% for issuance in bookissuance_list %}
+        <tr>
+          <td>{{ issuance.book }}</td>
+          <td>{{ issuance.member }}</td>
+          <td>{{ issuance.issue_date }}</td>
+          <td>{{ issuance.return_date }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>There are no book issuances.</p>
+  {% endif %}
+{% endblock %}

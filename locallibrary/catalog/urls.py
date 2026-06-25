@@ -20,3 +20,7 @@ urlpatterns += [
     path('book/<int:pk>/update/', views.BookUpdate.as_view(), name='book-update'),
     path('book/<int:pk>/delete/', views.BookDelete.as_view(), name='book-delete'),
 ]
+urlpatterns += [
+    path('issuances/', views.BookIssuanceListView.as_view(), name='issuances'),
+    path('members/', views.MemberListView.as_view(), name='members'),
+]

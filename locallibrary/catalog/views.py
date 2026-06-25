@@ -45,6 +45,16 @@ class AuthorListView(generic.ListView):
 class AuthorDetailView(generic.DetailView):
     model = Author
 
+class BookIssuanceListView(generic.ListView):
+    model = BookIssuance
+    template_name = 'catalog/bookissuance_list.html'
+    paginate_by = 1
+
+class MemberListView(generic.ListView):
+    model = Member
+    template_name = 'catalog/member_list.html'
+    paginate_by = 1
+
 class LoanedBooksByUserListView(LoginRequiredMixin,generic.ListView):
     """Generic class-based view listing books on loan to current user."""
     model = BookInstance
